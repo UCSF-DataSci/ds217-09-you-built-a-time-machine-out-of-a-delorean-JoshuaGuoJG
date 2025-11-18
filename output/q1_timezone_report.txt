@@ -1,0 +1,6 @@
+
+TODO: Document your timezone operations:
+Original Timezone: the original data did not sepcify a timezone
+localization methods: patient_vitals is localized to UTC using patient_vitals.tz_localize('UTC')
+conversion: the UTC localized data is converted to US/Eastern timezone using patient_vitals_tz.tz_convert('US/Eastern')
+DST handling: DST can introduce ambiguity by causing certain timestamps to occur twice or skip entirely. UTC inheretly does not have DST, so localizing to UTC avoids the issue. When converting to the DST, the timestamps are adjusted accordingly based on the rules of the target timezone.
