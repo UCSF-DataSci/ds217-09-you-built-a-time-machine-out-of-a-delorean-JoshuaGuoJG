@@ -1,0 +1,37 @@
+
+TODO: Document your missing data handling:
+- How many missing values did you find? 323
+- What percentage of data was missing? 96.42%
+- Which method did you use to fill missing values? time interpolation
+- Why did you choose that method? interpolation best preserves the smooth, continuous nature of temperature changes over calendar time.
+- What are the pros/cons of your approach? The main advantage is that it produces realistic, gradual daily estimates instead of unrealistic step functions, but the downside is that it may oversimplify true within-month variation that is no longer recoverable.
+- Include examples showing missing data patterns: downsampled data only shows patient temperatures at the end of each month. Filling the gaps with time interpolation provides smooth estimates for the missing days. 
+
+
+Missing patterns:
+Missing by month:
+date
+1      0
+2     27
+3     30
+4     29
+5     30
+6     29
+7     30
+8     30
+9     29
+10    30
+11    29
+12    30
+Name: temperature, dtype: int64
+
+Missing by day of week:
+date
+0    46
+1    45
+2    47
+3    46
+4    46
+5    47
+6    46
+Name: temperature, dtype: int64
